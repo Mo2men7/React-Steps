@@ -7,6 +7,12 @@ const messages = [
 export default function App() {
   const purpleWhite = { background: "#7950f2", color: "#fff" };
   const step = 1;
+  function handlePrevious() {
+    alert("Previous");
+  }
+  function handleNext() {
+    alert("Next");
+  }
   return (
     <div className="steps">
       <div className="numbers">
@@ -20,8 +26,13 @@ export default function App() {
       </p>
 
       <div className="buttons">
-        <button style={purpleWhite}>Previous</button>
-        <button style={purpleWhite}>Next</button>
+        {/* if we write onClick={alert("lol")} or handlePrevious() it's a call so when the app starts it will execute it even if we didn't click the button, And if we did it will not call the function as it called it at the start of it */}
+        <button style={purpleWhite} onClick={handlePrevious}>
+          Previous
+        </button>
+        <button style={purpleWhite} onClick={handleNext}>
+          Next
+        </button>
       </div>
     </div>
   );
