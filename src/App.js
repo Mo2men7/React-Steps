@@ -16,7 +16,8 @@ export default function App() {
     if (step > 1) setStep(step - 1);
   }
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((s) => s + 1);
+    //setStep((s) => s + 1) works well if we duplicated it but setStep(step - 1) will not, So the perfect one is to write a callback function
   }
   return (
     <>
