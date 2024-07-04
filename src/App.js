@@ -38,15 +38,24 @@ export default function App() {
 
           <div className="buttons">
             {/* if we write onClick={alert("lol")} or handlePrevious() it's a call so when the app starts it will execute it even if we didn't click the button, And if we did it will not call the function as it called it at the start of it */}
-            <button style={purpleWhite} onClick={handlePrevious}>
-              Previous
-            </button>
-            <button style={purpleWhite} onClick={handleNext}>
-              Next
-            </button>
+            <Button btnStyle={purpleWhite} onClick={handlePrevious}>
+              <span>👈</span> Previous
+            </Button>
+            <Button btnStyle={purpleWhite} onClick={handleNext}>
+              <span>👉</span> Next
+            </Button>
           </div>
         </div>
       )}
     </>
+  );
+}
+
+function Button({ onClick, btnStyle, children }) {
+  return (
+    <button style={btnStyle} onClick={onClick}>
+      {/* {text === "Next" ? `${text} ${emoji}` : `${emoji} ${text}`} */}
+      {children}
+    </button>
   );
 }
